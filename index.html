@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Peter Aitchison — Launch Lean. Get Paid Fast.</title>
+  <meta name="description" content="MVP launch consulting for Canadian entrepreneurs. Shopify Expert. Authorized Shopify Partner. Get your business live in 4 weeks — lean, AI-powered, and without the bloated startup costs." />
+  <link rel="canonical" href="https://launch.tuliptown.ca" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --dark:   #100f14;
+      --card:   #1c1a24;
+      --accent: #ff6640;
+      --accent2:#ffab87;
+      --green:  #22c55e;
+      --gold:   #f59e0b;
+      --text:   #ede9f6;
+      --muted:  #9590a8;
+      --border: rgba(255,255,255,0.08);
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+      background: var(--dark);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ─────────────────────────────────── */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 48px;
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0;
+      background: rgba(12,14,20,0.96);
+      backdrop-filter: blur(16px);
+      z-index: 100;
+    }
+    .wordmark { font-size: 1.05rem; font-weight: 800; color: #fff; letter-spacing: -0.4px; }
+    .wordmark span { color: var(--accent2); }
+    .nav-cta {
+      background: var(--accent);
+      color: #fff;
+      padding: 10px 22px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.88rem;
+      transition: opacity 0.2s;
+    }
+    .nav-cta:hover { opacity: 0.85; }
+
+    /* ── GUARANTEE BAR ───────────────────────── */
+    .guarantee-bar {
+      background: rgba(34,197,94,0.07);
+      border-bottom: 1px solid rgba(34,197,94,0.15);
+      padding: 11px 24px;
+      text-align: center;
+      font-size: 0.83rem;
+      color: #86efac;
+      font-weight: 500;
+    }
+    .guarantee-bar strong { font-weight: 700; }
+
+    /* ── HERO ────────────────────────────────── */
+    .hero {
+      text-align: center;
+      padding: 96px 24px 72px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .eyebrow {
+      display: inline-block;
+      background: rgba(255,102,64,0.1);
+      border: 1px solid rgba(255,102,64,0.3);
+      color: var(--accent2);
+      padding: 5px 16px;
+      border-radius: 100px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-size: clamp(2.6rem, 5.5vw, 4.2rem);
+      font-weight: 900;
+      line-height: 1.08;
+      letter-spacing: -2px;
+      color: #fff;
+      margin-bottom: 24px;
+    }
+    .hero h1 .grad {
+      background: linear-gradient(135deg, #ffab87, #ff6640, #e8355a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 640px;
+      margin: 0 auto 40px;
+      line-height: 1.75;
+    }
+    .hero-sub strong { color: var(--text); font-weight: 600; }
+    .hero-actions {
+      display: flex; gap: 14px;
+      justify-content: center; flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      padding: 15px 32px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.97rem;
+      box-shadow: 0 4px 28px rgba(255,102,64,0.4);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 36px rgba(255,102,64,0.5); }
+    .btn-ghost {
+      color: var(--muted);
+      padding: 15px 28px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.97rem;
+      border: 1px solid var(--border);
+      transition: all 0.2s;
+    }
+    .btn-ghost:hover { border-color: rgba(255,255,255,0.15); color: var(--text); }
+
+    /* ── STAT ROW ────────────────────────────── */
+    .stat-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .stat-item {
+      flex: 1;
+      min-width: 160px;
+      padding: 28px 24px;
+      text-align: center;
+      border-right: 1px solid var(--border);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-num {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: -1px;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .stat-num em { color: var(--accent2); font-style: normal; }
+    .stat-label { font-size: 0.78rem; color: var(--muted); font-weight: 500; }
+
+    /* ── SECTIONS ────────────────────────────── */
+    .section { padding: 80px 24px; max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      text-align: center;
+      font-size: 0.73rem;
+      font-weight: 700;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin-bottom: 10px;
+    }
+    .section-title {
+      text-align: center;
+      font-size: clamp(1.7rem, 3.2vw, 2.4rem);
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.8px;
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+    .section-sub {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.97rem;
+      max-width: 540px;
+      margin: 0 auto 52px;
+      line-height: 1.7;
+    }
+    .divider { border: none; border-top: 1px solid var(--border); }
+
+    /* ── PHILOSOPHY ──────────────────────────── */
+    .phil-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+    @media (max-width: 640px) {
+      .phil-grid { grid-template-columns: 1fr; }
+    }
+    .phil-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 30px 26px;
+      position: relative;
+      overflow: hidden;
+    }
+    .phil-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+    }
+    .phil-num {
+      font-size: 2.8rem;
+      font-weight: 900;
+      color: rgba(255,102,64,0.15);
+      line-height: 1;
+      margin-bottom: 10px;
+      letter-spacing: -2px;
+    }
+    .phil-card h3 { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .phil-card p { font-size: 0.86rem; color: var(--muted); line-height: 1.65; }
+
+    /* ── COST COMPARISON ─────────────────────── */
+    .compare-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      max-width: 820px;
+      margin: 0 auto;
+    }
+    .compare-col {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+    }
+    .compare-col.bad { border-color: rgba(248,113,113,0.25); }
+    .compare-col.good { border-color: rgba(34,197,94,0.25); }
+    .compare-head {
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .compare-head.bad { color: #f87171; }
+    .compare-head.good { color: var(--green); }
+    .compare-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .compare-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      color: var(--muted);
+      gap: 12px;
+    }
+    .compare-list li .label { flex: 1; }
+    .compare-list li .cost {
+      font-weight: 700;
+      font-size: 0.82rem;
+      white-space: nowrap;
+    }
+    .compare-list li .cost.red { color: #f87171; }
+    .compare-list li .cost.green { color: var(--green); }
+    .compare-total {
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      font-weight: 800;
+      font-size: 0.92rem;
+    }
+    .compare-total .label { color: var(--text); }
+    .compare-total .cost.red { color: #f87171; font-size: 1.05rem; }
+    .compare-total .cost.green { color: var(--green); font-size: 1.05rem; }
+
+    /* ── BRANDS ──────────────────────────────── */
+    .brand-section {
+      padding: 64px 24px;
+      text-align: center;
+    }
+    .brand-section-label {
+      font-size: 0.73rem;
+      font-weight: 700;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    .brand-section-title {
+      font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.5px;
+      margin-bottom: 10px;
+    }
+    .brand-section p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      max-width: 500px;
+      margin: 0 auto 28px;
+      line-height: 1.65;
+    }
+    .brand-tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .brand-tag {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 7px 18px;
+      font-size: 0.83rem;
+      color: var(--text);
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    .brand-tag:hover { border-color: rgba(255,102,64,0.4); color: var(--accent2); }
+
+    /* ── PACKAGES ────────────────────────────── */
+    .packages {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 22px;
+      align-items: start;
+    }
+    .package {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 36px 32px;
+      position: relative;
+      transition: transform 0.2s;
+    }
+    .package:hover { transform: translateY(-3px); }
+    .package.featured {
+      border-color: rgba(255,102,64,0.35);
+      background: linear-gradient(160deg, rgba(255,102,64,0.07), rgba(255,102,64,0.02));
+    }
+    .featured-tag {
+      position: absolute; top: -11px;
+      left: 50%; transform: translateX(-50%);
+      background: var(--accent); color: #fff;
+      padding: 3px 16px; border-radius: 100px;
+      font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.5px; text-transform: uppercase; white-space: nowrap;
+    }
+    .pkg-icon { font-size: 1.8rem; margin-bottom: 14px; display: block; }
+    .pkg-tier { font-size: 0.72rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+    .pkg-title { font-size: 1.35rem; font-weight: 800; color: #fff; margin-bottom: 14px; letter-spacing: -0.3px; line-height: 1.2; }
+    .pkg-price { display: flex; align-items: baseline; gap: 8px; margin-bottom: 16px; }
+    .price-amount { font-size: 2.5rem; font-weight: 900; color: #fff; letter-spacing: -1.5px; }
+    .price-detail { font-size: 0.84rem; color: var(--muted); }
+    .pkg-desc {
+      font-size: 0.87rem; color: var(--muted);
+      margin-bottom: 20px; line-height: 1.65;
+      border-top: 1px solid var(--border); padding-top: 16px;
+    }
+    .pkg-features { list-style: none; margin-bottom: 24px; display: flex; flex-direction: column; gap: 9px; }
+    .pkg-features li { display: flex; gap: 10px; font-size: 0.86rem; color: var(--text); line-height: 1.4; }
+    .pkg-features li .chk { color: var(--green); font-weight: 700; flex-shrink: 0; }
+    .pkg-features li.note { color: var(--muted); font-size: 0.79rem; }
+    .pkg-features li.note .chk { color: var(--accent2); }
+    .pkg-btn {
+      display: block; text-align: center;
+      padding: 13px 22px; border-radius: 10px;
+      text-decoration: none; font-weight: 700; font-size: 0.92rem;
+      transition: all 0.2s;
+    }
+    .btn-purple { background: var(--accent); color: #fff; box-shadow: 0 4px 18px rgba(255,102,64,0.3); }
+    .btn-purple:hover { box-shadow: 0 6px 28px rgba(255,102,64,0.5); transform: translateY(-1px); }
+    .btn-border { border: 1px solid var(--border); color: var(--text); }
+    .btn-border:hover { border-color: rgba(255,255,255,0.2); background: rgba(255,255,255,0.03); }
+    .btn-gold { background: linear-gradient(135deg, #f59e0b, #d97706); color: #fff; box-shadow: 0 4px 18px rgba(245,158,11,0.2); }
+    .btn-gold:hover { box-shadow: 0 6px 26px rgba(245,158,11,0.38); transform: translateY(-1px); }
+
+    /* ── EXPECT ──────────────────────────────── */
+    .expect-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 18px;
+    }
+    .expect-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px 22px;
+    }
+    .expect-icon { font-size: 1.4rem; margin-bottom: 12px; display: block; }
+    .expect-card h3 { font-size: 0.92rem; font-weight: 700; color: #fff; margin-bottom: 6px; }
+    .expect-card p { font-size: 0.83rem; color: var(--muted); line-height: 1.6; }
+
+    /* ── AVAILABILITY ────────────────────────── */
+    .avail-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      max-width: 560px;
+      margin: 36px auto 0;
+    }
+    .avail-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px 14px;
+      text-align: center;
+    }
+    .avail-day { font-size: 0.97rem; font-weight: 800; color: #fff; margin-bottom: 4px; }
+    .avail-time { font-size: 0.78rem; color: var(--accent2); font-weight: 600; }
+    .avail-sub { font-size: 0.72rem; color: var(--muted); margin-top: 3px; }
+    .scarcity {
+      text-align: center;
+      margin: 22px auto 0;
+      padding: 13px 22px;
+      background: rgba(245,158,11,0.07);
+      border: 1px solid rgba(245,158,11,0.2);
+      border-radius: 10px;
+      font-size: 0.85rem;
+      color: #fbbf24;
+      max-width: 440px;
+    }
+
+    /* ── CRED STRIP ──────────────────────────── */
+    .cred-strip {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 28px 24px;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .cred-pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 8px 16px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .cred-pill .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .cred-pill .dot.green { background: var(--green); }
+    .cred-pill .dot.coral { background: var(--accent); }
+    .cred-pill .dot.gold { background: var(--gold); }
+
+    /* ── FAQ ─────────────────────────────────── */
+    .faq-list { display: flex; flex-direction: column; gap: 13px; max-width: 720px; margin: 0 auto; }
+    .faq-item { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 20px 22px; }
+    .faq-q { font-weight: 700; color: #fff; font-size: 0.94rem; margin-bottom: 6px; }
+    .faq-a { font-size: 0.86rem; color: var(--muted); line-height: 1.65; }
+
+    /* ── CTA ─────────────────────────────────── */
+    .cta-wrap {
+      max-width: 680px;
+      margin: 40px auto 80px;
+      background: linear-gradient(160deg, rgba(255,102,64,0.11), rgba(255,102,64,0.04));
+      border: 1px solid rgba(255,102,64,0.22);
+      border-radius: 24px;
+      padding: 64px 48px;
+      text-align: center;
+    }
+    .cta-wrap h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; color: #fff; letter-spacing: -0.5px; margin-bottom: 12px; line-height: 1.2; }
+    .cta-wrap p { color: var(--muted); margin-bottom: 28px; font-size: 0.95rem; line-height: 1.65; }
+
+    /* ── FOOTER ──────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 26px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .footer-l { font-size: 0.83rem; color: var(--muted); }
+    .footer-l strong { color: var(--text); font-weight: 600; }
+    .footer-r { font-size: 0.78rem; color: var(--muted); }
+
+    /* ── RESPONSIVE ──────────────────────────── */
+    @media (max-width: 680px) {
+      nav { padding: 14px 20px; }
+      .hero { padding: 60px 20px 52px; }
+      .section { padding: 60px 20px; }
+      .compare-wrap { grid-template-columns: 1fr; }
+      .avail-row { grid-template-columns: 1fr; max-width: 260px; }
+      .cta-wrap { padding: 40px 24px; margin: 20px 20px 60px; }
+      footer { flex-direction: column; text-align: center; padding: 22px 20px; }
+      .stat-item { border-right: none; border-bottom: 1px solid var(--border); }
+      .stat-item:last-child { border-bottom: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="wordmark">Peter Aitchison<span>.</span> 🇨🇦</div>
+  <a href="#book" class="nav-cta">Book a Session</a>
+</nav>
+
+<!-- GUARANTEE BAR -->
+<div class="guarantee-bar">
+  🛡️ <strong>Satisfaction Guarantee —</strong> If your first session isn't worth every penny, I'll refund you in full. No questions asked.
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="eyebrow">🚀 Online Business Launch Consulting</div>
+  <h1>You can do this.<br /><span class="grad">I'll make sure of it.</span></h1>
+  <p class="hero-sub">
+    I'm an <strong>ecommerce expert</strong> who has helped businesses of every shape and size launch online — from medical devices to cupcakes to metaphysical brands. If you're serious about starting, I'll ask you the questions you haven't thought to ask yourself, challenge you to think bigger, and be right there when you go live. Most people burn through thousands on subscriptions and tools before they ever make a dollar. I'll show you how to launch a <strong>real, revenue-ready business</strong> the lean way — using AI tools and a DIY approach that cuts unnecessary startup costs, gets you to market fast, and puts your first paying customer ahead of everything else.
+  </p>
+  <div class="hero-actions">
+    <a href="#packages" class="btn-primary">See the Packages</a>
+    <a href="#approach" class="btn-ghost">My approach →</a>
+  </div>
+</section>
+
+<!-- STAT ROW -->
+<div class="stat-row">
+  <div class="stat-item">
+    <div class="stat-num"><em>$0</em></div>
+    <div class="stat-label">in subscriptions on day one</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">4<em>wk</em></div>
+    <div class="stat-label">from idea to live MVP</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num"><em>≤</em>9</div>
+    <div class="stat-label">clients per month</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">100<em>%</em></div>
+    <div class="stat-label">satisfaction guarantee</div>
+  </div>
+</div>
+
+<!-- APPROACH -->
+<section class="section" id="approach">
+  <div class="section-label">The philosophy</div>
+  <h2 class="section-title">Revenue first. Everything else later.</h2>
+  <p class="section-sub">The goal isn't a perfect website. The goal is your first paying customer — as fast and cheaply as possible.</p>
+
+  <div class="phil-grid">
+    <div class="phil-card">
+      <div class="phil-num">01</div>
+      <h3>MVP before everything</h3>
+      <p>You don't need to build the full thing to start selling. I'll help you identify the smallest version of your business that can generate real revenue — and launch that first. Polish comes after profit.</p>
+    </div>
+    <div class="phil-card">
+      <div class="phil-num">02</div>
+      <h3>AI tools replace expensive subscriptions</h3>
+      <p>Most services people pay monthly for can be replaced with the right AI tools and a bit of know-how. I'll show you exactly how — so your operating costs stay low while you're finding your footing.</p>
+    </div>
+    <div class="phil-card">
+      <div class="phil-num">03</div>
+      <h3>DIY until it's worth outsourcing</h3>
+      <p>You'll leave each session knowing how to run your own business — not dependent on agencies or expensive freelancers. When you do eventually hire help, you'll know exactly what you're paying for.</p>
+    </div>
+    <div class="phil-card">
+      <div class="phil-num">04</div>
+      <h3>I ask the questions you won't</h3>
+      <p>I'll challenge your assumptions, call out where you're getting in your own way, and keep the focus on what actually matters to your end customer — not what feels comfortable to build.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- MVP COST -->
+<section class="section" style="padding-top: 72px; padding-bottom: 72px;">
+  <div class="section-label">What it actually costs</div>
+  <h2 class="section-title">Your entire MVP launch stack.</h2>
+  <p class="section-sub">This is everything you need to get a real business in front of real customers. Nothing more — until you're making money.</p>
+
+  <div style="max-width: 580px; margin: 0 auto;">
+    <div style="background: var(--card); border: 1px solid rgba(34,197,94,0.25); border-radius: 20px; overflow: hidden;">
+
+      <div style="padding: 8px 28px; background: rgba(34,197,94,0.07); border-bottom: 1px solid rgba(34,197,94,0.15);">
+        <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: var(--green);">✅ Your lean MVP stack</span>
+      </div>
+
+      <div style="padding: 8px 0;">
+        <div class="mvp-row">
+          <div class="mvp-left">
+            <span class="mvp-icon">🌐</span>
+            <div>
+              <div class="mvp-name">Domain name</div>
+              <div class="mvp-desc">Your .com — the only thing you truly own</div>
+            </div>
+          </div>
+          <div class="mvp-cost">~$15 <span>CAD/yr</span></div>
+        </div>
+        <div class="mvp-divider"></div>
+        <div class="mvp-row">
+          <div class="mvp-left">
+            <span class="mvp-icon">🖥️</span>
+            <div>
+              <div class="mvp-name">Launch platform</div>
+              <div class="mvp-desc">Free tiers exist — we pick the right one for your business</div>
+            </div>
+          </div>
+          <div class="mvp-cost">$0 <span>to start</span></div>
+        </div>
+        <div class="mvp-divider"></div>
+        <div class="mvp-row">
+          <div class="mvp-left">
+            <span class="mvp-icon">🤖</span>
+            <div>
+              <div class="mvp-name">AI tools</div>
+              <div class="mvp-desc">Replace design, copy, support, scheduling — and more</div>
+            </div>
+          </div>
+          <div class="mvp-cost">Free – $25 <span>CAD/mo</span></div>
+        </div>
+        <div class="mvp-divider"></div>
+        <div class="mvp-row">
+          <div class="mvp-left">
+            <span class="mvp-icon">💳</span>
+            <div>
+              <div class="mvp-name">Payment processing</div>
+              <div class="mvp-desc">Stripe — you only pay when you get paid</div>
+            </div>
+          </div>
+          <div class="mvp-cost">2.9% <span>of sales</span></div>
+        </div>
+        <div class="mvp-divider"></div>
+        <div class="mvp-row">
+          <div class="mvp-left">
+            <span class="mvp-icon">📦</span>
+            <div>
+              <div class="mvp-name">Everything else</div>
+              <div class="mvp-desc">Add tools only when revenue justifies the cost</div>
+            </div>
+          </div>
+          <div class="mvp-cost">$0 <span>until needed</span></div>
+        </div>
+      </div>
+
+      <div style="padding: 20px 28px; background: rgba(34,197,94,0.07); border-top: 1px solid rgba(34,197,94,0.15); display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-size: 0.9rem; font-weight: 700; color: var(--text);">Total to launch your MVP</span>
+        <span style="font-size: 1.5rem; font-weight: 900; color: var(--green); letter-spacing: -0.5px;">Under $60 CAD</span>
+      </div>
+
+    </div>
+
+    <p style="text-align: center; font-size: 0.82rem; color: var(--muted); margin-top: 16px;">Scale your tools when your revenue tells you to — not before.</p>
+  </div>
+</section>
+
+<style>
+  .mvp-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 28px;
+    gap: 16px;
+  }
+  .mvp-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex: 1;
+  }
+  .mvp-icon { font-size: 1.3rem; flex-shrink: 0; }
+  .mvp-name { font-size: 0.9rem; font-weight: 700; color: var(--text); }
+  .mvp-desc { font-size: 0.78rem; color: var(--muted); margin-top: 2px; }
+  .mvp-cost {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--green);
+    white-space: nowrap;
+    text-align: right;
+  }
+  .mvp-cost span { font-size: 0.72rem; font-weight: 500; color: var(--muted); display: block; }
+  .mvp-divider { border: none; border-top: 1px solid var(--border); margin: 0 28px; }
+</style>
+
+<hr class="divider" />
+
+<!-- BRANDS -->
+<section class="brand-section">
+  <div class="brand-section-label">Experience</div>
+  <div class="brand-section-title">I've launched it all.</div>
+  <p>Shopify Expert. Authorized Shopify Partner. Social media specialist. I've worked with brands across every niche imaginable — and the lean approach works for all of them.</p>
+  <div class="brand-tags">
+    <div class="brand-tag">🧶 Ropes &amp; Rigging</div>
+    <div class="brand-tag">🧁 Cupcake Bakeries</div>
+    <div class="brand-tag">🩺 Medical Devices</div>
+    <div class="brand-tag">🔮 Metaphysical &amp; Spiritual</div>
+    <div class="brand-tag">🧴 Beauty &amp; Skincare</div>
+    <div class="brand-tag">🔥 Barbecue &amp; Grilling</div>
+    <div class="brand-tag">👔 Men's Fashion</div>
+    <div class="brand-tag">🧘 Yoga Studios</div>
+    <div class="brand-tag">🥾 Outdoor &amp; Adventure Tours</div>
+    <div class="brand-tag">📦 Packaging &amp; Industrial</div>
+    <div class="brand-tag">📦 Dropshipping</div>
+    <div class="brand-tag">🍕 Food &amp; Beverage</div>
+    <div class="brand-tag">🏠 Lifestyle &amp; Home</div>
+    <div class="brand-tag">👗 Apparel &amp; Clothing</div>
+    <div class="brand-tag">📱 Content &amp; Social Brands</div>
+  </div>
+</section>
+
+<!-- CRED STRIP -->
+<div class="cred-strip">
+  <div class="cred-pill"><span class="dot green"></span> Shopify Expert</div>
+  <div class="cred-pill"><span class="dot green"></span> Authorized Shopify Partner</div>
+  <div class="cred-pill"><span class="dot coral"></span> Authentic Social Media Content</div>
+  <div class="cred-pill"><span class="dot gold"></span> AI-Powered Launch Strategy</div>
+  <div class="cred-pill"><span class="dot coral"></span> Tight Deadlines Met — Every Time</div>
+</div>
+
+<hr class="divider" />
+
+<!-- PACKAGES -->
+<section class="section" id="packages">
+  <div class="section-label">Services &amp; Pricing</div>
+  <h2 class="section-title">Pick your package</h2>
+  <p class="section-sub">Transparent pricing. Pay when you book. Fully refundable after your first session if it isn't for you.</p>
+  <p style="text-align:center; font-size: 0.8rem; color: var(--muted); margin-top: -36px; margin-bottom: 48px;">🇨🇦 All prices in Canadian dollars (CAD) &nbsp;·&nbsp; Sessions available to clients worldwide</p>
+
+  <div class="packages">
+
+    <!-- Quick Start -->
+    <div class="package">
+      <span class="pkg-icon">⚡</span>
+      <div class="pkg-tier">Starter</div>
+      <div class="pkg-title">Quick Start Consultation</div>
+      <div class="pkg-price">
+        <span class="price-amount">$150</span>
+        <span class="price-detail">CAD / 1-hour session</span>
+      </div>
+      <p class="pkg-desc">One focused hour. We'll map what you're building, figure out the leanest path to launch, and identify exactly which tools and AI you need — and which ones you don't.</p>
+      <ul class="pkg-features">
+        <li><span class="chk">✓</span> 60-minute live video session</li>
+        <li><span class="chk">✓</span> Lean platform &amp; tool stack recommendation</li>
+        <li><span class="chk">✓</span> AI tool recommendations tailored to your business</li>
+        <li><span class="chk">✓</span> Written action plan delivered after the call</li>
+        <li><span class="chk">✓</span> Email follow-up for 48 hours</li>
+        <li class="note"><span class="chk">→</span> Best for: early stage or anyone who feels stuck before they've started</li>
+      </ul>
+      <!-- Replace with Calendly link -->
+      <a href="#book" class="pkg-btn btn-border">Book a Session →</a>
+    </div>
+
+    <!-- 4-Week -->
+    <div class="package featured">
+      <div class="featured-tag">Most Popular</div>
+      <span class="pkg-icon">🚀</span>
+      <div class="pkg-tier">Complete Package</div>
+      <div class="pkg-title">4-Week MVP Launch</div>
+      <div class="pkg-price">
+        <span class="price-amount">$500</span>
+        <span class="price-detail">CAD / full package</span>
+      </div>
+      <p class="pkg-desc">Four weekly sessions to go from idea to live, revenue-ready MVP. We'll build lean, use AI wherever possible, and get you to your first customer — without the bloated startup costs.</p>
+      <ul class="pkg-features">
+        <li><span class="chk">✓</span> 4 × 60-minute live sessions (one per week)</li>
+        <li><span class="chk">✓</span> Week-by-week action plan after every call</li>
+        <li><span class="chk">✓</span> Real-time help setting up your lean tech stack</li>
+        <li><span class="chk">✓</span> AI tool setup &amp; training included</li>
+        <li><span class="chk">✓</span> Launch day text/DM support — I'm on standby</li>
+        <li><span class="chk">✓</span> Email access between sessions for quick questions</li>
+        <li class="note"><span class="chk">→</span> Best for: ready to commit and launch this month</li>
+      </ul>
+      <!-- Replace with Calendly link -->
+      <a href="#book" class="pkg-btn btn-purple">Start Your Launch →</a>
+    </div>
+
+    <!-- Follow-Up -->
+    <div class="package">
+      <span class="pkg-icon">📈</span>
+      <div class="pkg-tier">Post-Launch</div>
+      <div class="pkg-title">Follow-Up Sessions</div>
+      <div class="pkg-price">
+        <span class="price-amount">$120</span>
+        <span class="price-detail">CAD / 1-hour session</span>
+      </div>
+      <p class="pkg-desc">Already live? Let's optimize. Cut more costs, improve your AI setup, grow your social presence, and figure out what to scale — and what to drop.</p>
+      <ul class="pkg-features">
+        <li><span class="chk">✓</span> 60-minute live video session</li>
+        <li><span class="chk">✓</span> Growth &amp; cost optimization strategy</li>
+        <li><span class="chk">✓</span> Social media content &amp; strategy review</li>
+        <li><span class="chk">✓</span> AI tool audit &amp; upgrade recommendations</li>
+        <li><span class="chk">✓</span> Email follow-up for 48 hours</li>
+        <li class="note"><span class="chk">→</span> Best for: existing clients or launched businesses</li>
+      </ul>
+      <!-- Replace with Calendly link -->
+      <a href="#book" class="pkg-btn btn-gold">Book a Follow-Up →</a>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- BOOK -->
+<section class="section" id="book" style="padding-top: 72px; padding-bottom: 72px;">
+  <div class="section-label">Book a Session</div>
+  <h2 class="section-title">Pick a time. Pay. You're in.</h2>
+  <p class="section-sub">No emails back and forth. Choose a slot below, pay securely via Stripe, and get an instant calendar invite with your video link.</p>
+  <!-- Calendly inline widget begin -->
+  <div class="calendly-inline-widget" data-url="https://calendly.com/aitchisonpeter/consultation" style="min-width:100%; height:1000px; border-radius: 16px; overflow: hidden;"></div>
+  <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  <!-- Calendly inline widget end -->
+</section>
+
+<hr class="divider" />
+
+<!-- WHAT TO EXPECT -->
+<section class="section" id="expect" style="padding-top: 64px; padding-bottom: 64px;">
+  <div class="section-label">What to expect</div>
+  <h2 class="section-title">Honest about how this works</h2>
+  <p class="section-sub">Clear boundaries, clear deliverables. No surprises.</p>
+
+  <div class="expect-grid">
+    <div class="expect-card">
+      <span class="expect-icon">🎥</span>
+      <h3>Live, hands-on sessions</h3>
+      <p>We're on video working through it in real time. I'll screen-share, walk you through setups, and help you build — not just talk theory.</p>
+    </div>
+    <div class="expect-card">
+      <span class="expect-icon">🤖</span>
+      <h3>AI tools you actually learn to use</h3>
+      <p>I'll show you the exact AI tools that replace expensive subscriptions for your business type. You'll leave knowing how to use them — not just that they exist.</p>
+    </div>
+    <div class="expect-card">
+      <span class="expect-icon">📧</span>
+      <h3>Email between sessions</h3>
+      <p>Got a quick question? Email me. I reply within 48 hours. Deep work stays for our sessions — that's where the real progress happens.</p>
+    </div>
+    <div class="expect-card">
+      <span class="expect-icon">📱</span>
+      <h3>Text on launch day</h3>
+      <p>The day you go live, I'm reachable by text. Something breaks or looks wrong — message me. You won't launch alone.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- AVAILABILITY -->
+<section class="section" id="availability" style="padding-top: 64px; padding-bottom: 64px;">
+  <div class="section-label">Availability</div>
+  <h2 class="section-title">When we meet</h2>
+  <p class="section-sub">Tuesday through Thursday, afternoons only. Capped at 9 clients per month — so you always get my full attention.</p>
+
+  <div class="avail-row">
+    <div class="avail-card">
+      <div class="avail-day">Tue</div>
+      <div class="avail-time">1 – 4 PM</div>
+      <div class="avail-sub">3 slots</div>
+    </div>
+    <div class="avail-card">
+      <div class="avail-day">Wed</div>
+      <div class="avail-time">1 – 4 PM</div>
+      <div class="avail-sub">3 slots</div>
+    </div>
+    <div class="avail-card">
+      <div class="avail-day">Thu</div>
+      <div class="avail-time">1 – 4 PM</div>
+      <div class="avail-sub">3 slots</div>
+    </div>
+  </div>
+
+  <div class="scarcity">
+    ⚠️ <strong>9 clients per month — no exceptions.</strong> Book early or wait for next month.
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <div class="section-label">FAQ</div>
+  <h2 class="section-title">Questions people actually ask</h2>
+  <p class="section-sub">Straight answers. No spin.</p>
+
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q">What's an MVP and do I actually need one?</div>
+      <div class="faq-a">MVP stands for Minimum Viable Product — the simplest version of your business that can make money. You don't need a perfect website, a full product line, or a polished brand on day one. You need to validate that someone will pay for what you're offering. That's what we build first.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Which AI tools will we use?</div>
+      <div class="faq-a">It depends on your business — but there are AI tools that can replace design software, copywriting tools, customer service platforms, scheduling apps, and more. I'll recommend what's actually useful for your specific situation, not a generic list of tools everyone talks about.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Do I need to subscribe to Shopify or other paid platforms?</div>
+      <div class="faq-a">Not necessarily — and definitely not on day one. Part of what we figure out in our first session is the leanest possible tech stack for what you're building. Some businesses need Shopify, others can start for free or near-free on other platforms. We'll find your path before you spend a dollar on subscriptions.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">I have zero experience. Can you really help me?</div>
+      <div class="faq-a">Yes — complete beginners are who I work with best. No business background, no tech skills, no fully formed idea required. The only thing you need is a willingness to show up and do the work between our sessions.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What if I'm not happy with the first session?</div>
+      <div class="faq-a">I'll refund you in full. No awkward conversation required. I'd rather you walk away with your money than stick around feeling like it wasn't worth it.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Will you build my website or write my content for me?</div>
+      <div class="faq-a">I won't — but I'll sit with you while you do it and show you exactly how. I'll also show you which AI tools make it much easier than you think. The goal is that you own everything and know how to run it yourself when we're done.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How does booking work?</div>
+      <div class="faq-a">Click any "Book" button, pick a time, and pay securely via Stripe. You'll get an instant confirmation email with a calendar invite and video call link. Fully automated — no back-and-forth until we actually meet.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-wrap" style="padding: 24px; max-width: 760px; margin: 40px auto 80px; background: none; border: none; border-radius: 0;">
+  <div style="background: linear-gradient(160deg, rgba(255,102,64,0.11), rgba(255,102,64,0.04)); border: 1px solid rgba(255,102,64,0.22); border-radius: 24px; padding: 64px 48px; text-align: center;">
+    <h2>Your idea doesn't need<br />a $2,000 tech stack.<br />It needs a customer.</h2>
+    <p>9 spots per month. Pick your package and let's build something lean, fast, and profitable.</p>
+    <a href="#book" class="btn-primary">Book Your Session Now</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-l"><strong>Peter Aitchison</strong> — MVP Launch Consulting</div>
+  <div class="footer-r">🇨🇦 Based in Canada &nbsp;·&nbsp; Working with clients worldwide &nbsp;·&nbsp; All prices in CAD &nbsp;·&nbsp; Payments via Stripe</div>
+</footer>
+
+</body>
+</html>
